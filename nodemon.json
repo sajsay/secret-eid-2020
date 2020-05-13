@@ -1,0 +1,8 @@
+{
+  "env": {
+    "MONGODB_URI": "mongodb://sajsay:deeyas786@ds143326.mlab.com:43326/secreteid-restore",
+    "SECRET": "adjfkldjf;",
+    "user": "admin",
+    "pass": "password"
+  }
+}

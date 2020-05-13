@@ -86,7 +86,6 @@ router.get('/secreteid', function (req, res) {
 router.post('/secreteid', function (req, res) {
   User.findByIdAndUpdate(req.user._id, { $set: { wishlist: req.body.wishlist } }, { new: true }, function (err, user) {
     if (err) return handleError(err);
-    res.redirect('/secreteid');
     res.render('secreteid', {
       name: req.user.name,
       wishlist: req.body.wishlist

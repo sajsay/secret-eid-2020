@@ -35,7 +35,7 @@ module.exports = function (passport) {
       console.log('users :', users)
       if (err) {
         console.log(err)
-      } else if (users.length == 10) {
+      } else if (users.length == 12) {
         console.log('ln: ', users.length);
         res.redirect('/login');
       } else {
@@ -79,10 +79,10 @@ module.exports = function (passport) {
         var usersShuffled = _.shuffle(users);
         console.log('shuf: ', usersShuffled);
         var pairs = [];
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 12; i++) {
           console.log('cn: ', i)
           if (i == 0) {
-            pairs.push({ giver: usersShuffled[i], givee: usersShuffled[9] });
+            pairs.push({ giver: usersShuffled[i], givee: usersShuffled[11] });
           }
           else {
             pairs.push({ giver: usersShuffled[i], givee: usersShuffled[i - 1] });
@@ -126,8 +126,8 @@ module.exports = function (passport) {
         if (err) {
           console.log(err.message)
           res.send({ 'message': 'no' });
-        } else if (users.length != 10) {
-          res.send({ 'message': 'not 10' });
+        } else if (users.length != 12) {
+          res.send({ 'message': 'not 12' });
         } else {
           randomizer(function (pairs) {
             //console.log('pairs in /admin', pairs)
